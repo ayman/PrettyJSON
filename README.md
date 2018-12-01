@@ -11,6 +11,8 @@ Right now three things are needed:
 2. Context menu to toggle raw (the toolbar button does this but it should be in the context menu as well).
 3. The disable icon code seems not to work.
 
+Follow the Issues for more.
+
 ## Building
 
 You need a host application to build and test the plugin, this is the cocoa app called `Safari Extensions`. 
