@@ -18,3 +18,7 @@ Follow the Issues for more.
 You need a host application to build and test the plugin, this is the cocoa app called `Safari Extensions`. 
 
 Follow along with the [Apple instructions](https://developer.apple.com/documentation/safariservices/safari_app_extensions/building_a_safari_app_extension). 
+
+## App Store
+
+This has been submitted to the [store](https://developer.apple.com//safari/extensions/submission/)...pending review.
