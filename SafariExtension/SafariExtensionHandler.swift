@@ -15,7 +15,7 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
     override func messageReceived(withName messageName: String, from page: SFSafariPage, userInfo: [String : Any]?) {
         // This method will be called when a content script provided by your extension calls safari.extension.dispatchMessage("message").
         page.getPropertiesWithCompletionHandler { properties in
-            NSLog("The extension received a message (\(messageName)) from a script injected into (\(String(describing: properties?.url))) with userInfo (\(userInfo ?? [:]))")
+            NSLog("PrettyJson recieved (\(messageName)) from the script in (\(String(describing: properties?.url))) with userInfo (\(userInfo ?? [:]))")
             if messageName == "jsonDisabled" {
                 SFSafariApplication.getActiveWindow { (activeWindow) in
                     activeWindow?.getToolbarItem { (toolbarButton) in
@@ -37,9 +37,9 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
                     }
                 }
             } else {
+                // We just echo if we don't know what that was.
                 page.dispatchMessageToScript(withName: messageName, userInfo: nil)
             }
-            // SFSafariApplication.setToolbarItemsNeedUpdate()
         }
     }
     
@@ -52,12 +52,4 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
             }
         }
     }
-    
-//    override func validateToolbarItem(in window: SFSafariWindow, validationHandler: @escaping ((Bool, String) -> Void)) {
-//        validationHandler(self.enabled, "")
-//    }
-    
-//    override func popoverViewController() -> SFSafariExtensionViewController {
-//        return SafariExtensionViewController.shared
-//    }
 }
