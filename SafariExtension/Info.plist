@@ -17,7 +17,7 @@
 	<key>CFBundlePackageType</key>
 	<string>XPC!</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.1</string>
+	<string>1.3</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
 	<key>LSMinimumSystemVersion</key>
@@ -64,8 +64,8 @@
 		</dict>
 	</dict>
 	<key>NSHumanReadableCopyright</key>
-	<string>Copyright © 2018 shaumur.ai. All rights reserved.</string>
+	<string>From http://shaumur.ai under GNU GPL 3.0.</string>
 	<key>NSHumanReadableDescription</key>
-	<string>Yet another JSON Pretty Printer.</string>
+	<string>Yet another JSON Pretty Printer. No server logs, no cost, no nonsense. </string>
 </dict>
 </plist>
