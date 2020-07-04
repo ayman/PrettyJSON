@@ -6,16 +6,14 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
-            <connections>
-                <outlet property="delegate" destination="Voe-Tx-rLC" id="GzC-gU-4Uq"/>
-            </connections>
-        </customObject>
+        <customObject id="-2" userLabel="File's Owner" customClass="NSApplication"/>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
-        <customObject id="-3" userLabel="Application"/>
-        <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="PrettyJSON" customModuleProvider="target">
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="PrettyJSON_for_Safari" customModuleProvider="target">
             <connections>
-                <outlet property="window" destination="QvC-M9-y7g" id="gIp-Ho-8D9"/>
+                <outlet property="closeMenuItem" destination="DVo-aG-piG" id="NRR-LZ-6jU"/>
+                <outlet property="mainWindowMenuItem" destination="sJF-Pc-frM" id="lTW-Ic-0Qf"/>
+                <outlet property="window" destination="QvC-M9-y7g" id="6Rq-N7-A5q"/>
             </connections>
         </customObject>
         <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
@@ -62,12 +60,6 @@
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <menu key="submenu" title="File" id="bib-Uj-vzu">
                         <items>
-                            <menuItem title="Open…" keyEquivalent="o" id="IAo-SY-fd9">
-                                <connections>
-                                    <action selector="openDocument:" target="-1" id="bVn-NM-KNZ"/>
-                                </connections>
-                            </menuItem>
-                            <menuItem isSeparatorItem="YES" id="m54-Is-iLE"/>
                             <menuItem title="Close" keyEquivalent="w" id="DVo-aG-piG">
                                 <connections>
                                     <action selector="performClose:" target="-1" id="HmO-Ls-i7Q"/>
@@ -80,22 +72,9 @@
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <menu key="submenu" title="Window" systemMenu="window" id="Td7-aD-5lo">
                         <items>
-                            <menuItem title="Minimize" keyEquivalent="m" id="OY7-WF-poV">
+                            <menuItem title="Main Window" keyEquivalent="/" id="sJF-Pc-frM">
                                 <connections>
-                                    <action selector="performMiniaturize:" target="-1" id="VwT-WD-YPe"/>
-                                </connections>
-                            </menuItem>
-                            <menuItem title="Zoom" id="R4o-n2-Eq4">
-                                <modifierMask key="keyEquivalentModifierMask"/>
-                                <connections>
-                                    <action selector="performZoom:" target="-1" id="DIl-cC-cCs"/>
-                                </connections>
-                            </menuItem>
-                            <menuItem isSeparatorItem="YES" id="eu3-7i-yIM"/>
-                            <menuItem title="Bring All to Front" id="LE2-aR-0XJ">
-                                <modifierMask key="keyEquivalentModifierMask"/>
-                                <connections>
-                                    <action selector="arrangeInFront:" target="-1" id="DRN-fu-gQh"/>
+                                    <action selector="deminiaturize:" target="QvC-M9-y7g" id="Lon-Vz-Pbl"/>
                                 </connections>
                             </menuItem>
                         </items>
@@ -105,49 +84,53 @@
             <point key="canvasLocation" x="139" y="154"/>
         </menu>
         <window title="PrettyJSON for Safari" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g">
-            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="335" y="390" width="318" height="200"/>
+            <rect key="contentRect" x="335" y="390" width="339" height="200"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1792" height="1097"/>
             <view key="contentView" wantsLayer="YES" id="EiT-Mj-1SZ">
-                <rect key="frame" x="0.0" y="0.0" width="318" height="200"/>
+                <rect key="frame" x="0.0" y="0.0" width="339" height="200"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yLs-PI-MJl">
-                        <rect key="frame" x="20" y="132" width="48" height="48"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yLs-PI-MJl">
+                        <rect key="frame" x="41" y="127" width="48" height="53"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="48" id="N8n-Zg-WtY"/>
+                        </constraints>
                         <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="AppIcon" id="Vnf-q8-Vce"/>
                     </imageView>
-                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CZe-VC-dmg">
-                        <rect key="frame" x="84" y="164" width="134" height="16"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="CZe-VC-dmg">
+                        <rect key="frame" x="105" y="164" width="134" height="16"/>
                         <textFieldCell key="cell" lineBreakMode="clipping" title="PrettyJSON for Safari" id="WbG-Op-joW">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Yz7-iY-A8H">
-                        <rect key="frame" x="84" y="132" width="68" height="13"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Yz7-iY-A8H">
+                        <rect key="frame" x="105" y="127" width="68" height="13"/>
                         <textFieldCell key="cell" lineBreakMode="clipping" title="GNU GPL 3.0" id="RV7-hY-gya">
                             <font key="font" metaFont="system" size="10"/>
                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TP0-oG-rJi">
-                        <rect key="frame" x="84" y="148" width="204" height="14"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="TP0-oG-rJi">
+                        <rect key="frame" x="105" y="148" width="204" height="14"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="200" id="gAH-eb-z8Z"/>
+                        </constraints>
                         <textFieldCell key="cell" lineBreakMode="clipping" title="https://github.com/ayman/PrettyJSON" id="VyC-rh-Zfo">
-                            <font key="font" metaFont="menu" size="11"/>
+                            <font key="font" metaFont="message" size="11"/>
                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="s7j-jW-pRY">
-                        <rect key="frame" x="18" y="20" width="282" height="96"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="s7j-jW-pRY">
+                        <rect key="frame" x="39" y="15" width="282" height="96"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="96" id="JI0-Ko-DJq"/>
+                        </constraints>
                         <textFieldCell key="cell" alignment="left" id="f17-eb-qNS">
                             <font key="font" usesAppearanceFont="YES"/>
                             <string key="title">Ever want a pretty JSON view in Safari? 
@@ -159,8 +142,24 @@ Just run Safari and add the extension. You can toggle the pretty view in the too
                         </textFieldCell>
                     </textField>
                 </subviews>
+                <constraints>
+                    <constraint firstItem="CZe-VC-dmg" firstAttribute="leading" secondItem="yLs-PI-MJl" secondAttribute="trailing" constant="18" id="Cev-yt-WFm"/>
+                    <constraint firstItem="CZe-VC-dmg" firstAttribute="leading" secondItem="TP0-oG-rJi" secondAttribute="leading" id="DUE-G1-tJq"/>
+                    <constraint firstAttribute="trailing" secondItem="s7j-jW-pRY" secondAttribute="trailing" constant="20" symbolic="YES" id="K1Z-SE-lUb"/>
+                    <constraint firstItem="TP0-oG-rJi" firstAttribute="leading" secondItem="Yz7-iY-A8H" secondAttribute="leading" id="LZ7-W5-mbU"/>
+                    <constraint firstItem="yLs-PI-MJl" firstAttribute="top" secondItem="CZe-VC-dmg" secondAttribute="top" id="NFH-92-g2E"/>
+                    <constraint firstItem="TP0-oG-rJi" firstAttribute="top" secondItem="CZe-VC-dmg" secondAttribute="bottom" constant="2" id="QjO-gJ-6gK"/>
+                    <constraint firstItem="Yz7-iY-A8H" firstAttribute="top" secondItem="TP0-oG-rJi" secondAttribute="bottom" constant="8" symbolic="YES" id="ZDz-vd-aLP"/>
+                    <constraint firstItem="s7j-jW-pRY" firstAttribute="top" secondItem="yLs-PI-MJl" secondAttribute="bottom" constant="16" id="fmE-D0-RZM"/>
+                    <constraint firstItem="yLs-PI-MJl" firstAttribute="leading" secondItem="s7j-jW-pRY" secondAttribute="leading" id="hJr-Ge-vSV"/>
+                    <constraint firstItem="yLs-PI-MJl" firstAttribute="bottom" secondItem="Yz7-iY-A8H" secondAttribute="bottom" id="nxX-Ze-Rgq"/>
+                    <constraint firstAttribute="trailing" secondItem="TP0-oG-rJi" secondAttribute="trailing" constant="32" id="pN4-b9-off"/>
+                    <constraint firstItem="yLs-PI-MJl" firstAttribute="top" secondItem="EiT-Mj-1SZ" secondAttribute="top" constant="20" symbolic="YES" id="rJs-QF-swd"/>
+                    <constraint firstAttribute="bottom" secondItem="s7j-jW-pRY" secondAttribute="bottom" constant="15" id="tkD-Hv-n9k"/>
+                </constraints>
+                <accessibility description="A small window explaining the Safari Extension"/>
             </view>
-            <point key="canvasLocation" x="58" y="-200"/>
+            <point key="canvasLocation" x="68.5" y="-200"/>
         </window>
     </objects>
     <resources>
