@@ -22,15 +22,6 @@
 // along with this program. If not, see <http://www.gnu.org/licenses/>.
 //
 
-//
-//  SafariExtensionHandler.swift
-//  PrettyJSON
-//
-//  Created by David A Shamma on 11/30/18.
-//  Copyright © 2018 shaumur.ai. All rights reserved.
-//
-// https://developer.apple.com//safari/extensions/submission/
-
 import SafariServices
 
 class SafariExtensionHandler: SFSafariExtensionHandler {
