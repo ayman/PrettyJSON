@@ -1,0 +1,528 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E384B00924BE71940008C756 /* PrettyJSON.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = E384B00824BE71940008C756 /* PrettyJSON.entitlements */; };
+		E384B00B24BE71940008C756 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E384B00A24BE71940008C756 /* AppDelegate.swift */; };
+		E384B00E24BE71940008C756 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E384B00C24BE71940008C756 /* Main.storyboard */; };
+		E384B01024BE71940008C756 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E384B00F24BE71940008C756 /* ViewController.swift */; };
+		E384B01224BE71940008C756 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E384B01124BE71940008C756 /* Assets.xcassets */; };
+		E384B01924BE71940008C756 /* PrettyJSON Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = E384B01824BE71940008C756 /* PrettyJSON Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		E384B01E24BE71940008C756 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E384B01D24BE71940008C756 /* Cocoa.framework */; };
+		E384B02124BE71940008C756 /* SafariExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E384B02024BE71940008C756 /* SafariExtensionHandler.swift */; };
+		E384B02324BE71940008C756 /* SafariExtensionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E384B02224BE71940008C756 /* SafariExtensionViewController.swift */; };
+		E384B02624BE71940008C756 /* SafariExtensionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E384B02424BE71940008C756 /* SafariExtensionViewController.xib */; };
+		E384B03724BE75750008C756 /* AppIcon.icns in Resources */ = {isa = PBXBuildFile; fileRef = E384B03624BE75750008C756 /* AppIcon.icns */; };
+		E384B03D24BE79610008C756 /* js-off.pdf in Resources */ = {isa = PBXBuildFile; fileRef = E384B03824BE79610008C756 /* js-off.pdf */; };
+		E384B03E24BE79610008C756 /* js-on.pdf in Resources */ = {isa = PBXBuildFile; fileRef = E384B03924BE79610008C756 /* js-on.pdf */; };
+		E384B03F24BE79610008C756 /* js-dis.pdf in Resources */ = {isa = PBXBuildFile; fileRef = E384B03A24BE79610008C756 /* js-dis.pdf */; };
+		E384B04024BE79610008C756 /* prettyJSON.js in Resources */ = {isa = PBXBuildFile; fileRef = E384B03B24BE79610008C756 /* prettyJSON.js */; };
+		E384B04124BE79610008C756 /* prettyJSON.css in Resources */ = {isa = PBXBuildFile; fileRef = E384B03C24BE79610008C756 /* prettyJSON.css */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E384B01A24BE71940008C756 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E384AFFD24BE71940008C756 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E384B01724BE71940008C756;
+			remoteInfo = "PrettyJSON Extension";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		E384B03224BE71940008C756 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				E384B01924BE71940008C756 /* PrettyJSON Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		E384B00524BE71940008C756 /* PrettyJSON.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PrettyJSON.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E384B00824BE71940008C756 /* PrettyJSON.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PrettyJSON.entitlements; sourceTree = "<group>"; };
+		E384B00A24BE71940008C756 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E384B00D24BE71940008C756 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E384B00F24BE71940008C756 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E384B01124BE71940008C756 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E384B01324BE71940008C756 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E384B01824BE71940008C756 /* PrettyJSON Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "PrettyJSON Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E384B01D24BE71940008C756 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		E384B02024BE71940008C756 /* SafariExtensionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariExtensionHandler.swift; sourceTree = "<group>"; };
+		E384B02224BE71940008C756 /* SafariExtensionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariExtensionViewController.swift; sourceTree = "<group>"; };
+		E384B02524BE71940008C756 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SafariExtensionViewController.xib; sourceTree = "<group>"; };
+		E384B02724BE71940008C756 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E384B02C24BE71940008C756 /* PrettyJSON_Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PrettyJSON_Extension.entitlements; sourceTree = "<group>"; };
+		E384B03624BE75750008C756 /* AppIcon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = AppIcon.icns; sourceTree = "<group>"; };
+		E384B03824BE79610008C756 /* js-off.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "js-off.pdf"; sourceTree = "<group>"; };
+		E384B03924BE79610008C756 /* js-on.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "js-on.pdf"; sourceTree = "<group>"; };
+		E384B03A24BE79610008C756 /* js-dis.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "js-dis.pdf"; sourceTree = "<group>"; };
+		E384B03B24BE79610008C756 /* prettyJSON.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = prettyJSON.js; sourceTree = "<group>"; };
+		E384B03C24BE79610008C756 /* prettyJSON.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = prettyJSON.css; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E384B00224BE71940008C756 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E384B01524BE71940008C756 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E384B01E24BE71940008C756 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E384AFFC24BE71940008C756 = {
+			isa = PBXGroup;
+			children = (
+				E384B00724BE71940008C756 /* PrettyJSON */,
+				E384B01F24BE71940008C756 /* PrettyJSON Extension */,
+				E384B01C24BE71940008C756 /* Frameworks */,
+				E384B00624BE71940008C756 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E384B00624BE71940008C756 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E384B00524BE71940008C756 /* PrettyJSON.app */,
+				E384B01824BE71940008C756 /* PrettyJSON Extension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E384B00724BE71940008C756 /* PrettyJSON */ = {
+			isa = PBXGroup;
+			children = (
+				E384B03624BE75750008C756 /* AppIcon.icns */,
+				E384B00824BE71940008C756 /* PrettyJSON.entitlements */,
+				E384B00A24BE71940008C756 /* AppDelegate.swift */,
+				E384B00C24BE71940008C756 /* Main.storyboard */,
+				E384B00F24BE71940008C756 /* ViewController.swift */,
+				E384B01124BE71940008C756 /* Assets.xcassets */,
+				E384B01324BE71940008C756 /* Info.plist */,
+			);
+			path = PrettyJSON;
+			sourceTree = "<group>";
+		};
+		E384B01C24BE71940008C756 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E384B01D24BE71940008C756 /* Cocoa.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E384B01F24BE71940008C756 /* PrettyJSON Extension */ = {
+			isa = PBXGroup;
+			children = (
+				E384B03A24BE79610008C756 /* js-dis.pdf */,
+				E384B03824BE79610008C756 /* js-off.pdf */,
+				E384B03924BE79610008C756 /* js-on.pdf */,
+				E384B03C24BE79610008C756 /* prettyJSON.css */,
+				E384B03B24BE79610008C756 /* prettyJSON.js */,
+				E384B02024BE71940008C756 /* SafariExtensionHandler.swift */,
+				E384B02224BE71940008C756 /* SafariExtensionViewController.swift */,
+				E384B02424BE71940008C756 /* SafariExtensionViewController.xib */,
+				E384B02724BE71940008C756 /* Info.plist */,
+				E384B02C24BE71940008C756 /* PrettyJSON_Extension.entitlements */,
+			);
+			path = "PrettyJSON Extension";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E384B00424BE71940008C756 /* PrettyJSON */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E384B03324BE71940008C756 /* Build configuration list for PBXNativeTarget "PrettyJSON" */;
+			buildPhases = (
+				E384B00124BE71940008C756 /* Sources */,
+				E384B00224BE71940008C756 /* Frameworks */,
+				E384B00324BE71940008C756 /* Resources */,
+				E384B03224BE71940008C756 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E384B01B24BE71940008C756 /* PBXTargetDependency */,
+			);
+			name = PrettyJSON;
+			productName = PrettyJSON;
+			productReference = E384B00524BE71940008C756 /* PrettyJSON.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E384B01724BE71940008C756 /* PrettyJSON Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E384B02F24BE71940008C756 /* Build configuration list for PBXNativeTarget "PrettyJSON Extension" */;
+			buildPhases = (
+				E384B01424BE71940008C756 /* Sources */,
+				E384B01524BE71940008C756 /* Frameworks */,
+				E384B01624BE71940008C756 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "PrettyJSON Extension";
+			productName = "PrettyJSON Extension";
+			productReference = E384B01824BE71940008C756 /* PrettyJSON Extension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E384AFFD24BE71940008C756 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1150;
+				LastUpgradeCheck = 1150;
+				ORGANIZATIONNAME = "David A. Shamma";
+				TargetAttributes = {
+					E384B00424BE71940008C756 = {
+						CreatedOnToolsVersion = 11.5;
+					};
+					E384B01724BE71940008C756 = {
+						CreatedOnToolsVersion = 11.5;
+					};
+				};
+			};
+			buildConfigurationList = E384B00024BE71940008C756 /* Build configuration list for PBXProject "PrettyJSON" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E384AFFC24BE71940008C756;
+			productRefGroup = E384B00624BE71940008C756 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E384B00424BE71940008C756 /* PrettyJSON */,
+				E384B01724BE71940008C756 /* PrettyJSON Extension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E384B00324BE71940008C756 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E384B00924BE71940008C756 /* PrettyJSON.entitlements in Resources */,
+				E384B03724BE75750008C756 /* AppIcon.icns in Resources */,
+				E384B01224BE71940008C756 /* Assets.xcassets in Resources */,
+				E384B00E24BE71940008C756 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E384B01624BE71940008C756 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E384B03F24BE79610008C756 /* js-dis.pdf in Resources */,
+				E384B03E24BE79610008C756 /* js-on.pdf in Resources */,
+				E384B04024BE79610008C756 /* prettyJSON.js in Resources */,
+				E384B02624BE71940008C756 /* SafariExtensionViewController.xib in Resources */,
+				E384B03D24BE79610008C756 /* js-off.pdf in Resources */,
+				E384B04124BE79610008C756 /* prettyJSON.css in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E384B00124BE71940008C756 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E384B01024BE71940008C756 /* ViewController.swift in Sources */,
+				E384B00B24BE71940008C756 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E384B01424BE71940008C756 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E384B02324BE71940008C756 /* SafariExtensionViewController.swift in Sources */,
+				E384B02124BE71940008C756 /* SafariExtensionHandler.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E384B01B24BE71940008C756 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E384B01724BE71940008C756 /* PrettyJSON Extension */;
+			targetProxy = E384B01A24BE71940008C756 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		E384B00C24BE71940008C756 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E384B00D24BE71940008C756 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E384B02424BE71940008C756 /* SafariExtensionViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E384B02524BE71940008C756 /* Base */,
+			);
+			name = SafariExtensionViewController.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E384B02D24BE71940008C756 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		E384B02E24BE71940008C756 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		E384B03024BE71940008C756 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "PrettyJSON Extension/PrettyJSON_Extension.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "PrettyJSON Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "ai.shamur.bin.PrettyJSON-Extension";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		E384B03124BE71940008C756 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "PrettyJSON Extension/PrettyJSON_Extension.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "PrettyJSON Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "ai.shamur.bin.PrettyJSON-Extension";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		E384B03424BE71940008C756 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = PrettyJSON/PrettyJSON.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = PrettyJSON/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.5;
+				PRODUCT_BUNDLE_IDENTIFIER = ai.shamur.bin.PrettyJSON;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		E384B03524BE71940008C756 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = PrettyJSON/PrettyJSON.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = PrettyJSON/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.5;
+				PRODUCT_BUNDLE_IDENTIFIER = ai.shamur.bin.PrettyJSON;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E384B00024BE71940008C756 /* Build configuration list for PBXProject "PrettyJSON" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E384B02D24BE71940008C756 /* Debug */,
+				E384B02E24BE71940008C756 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E384B02F24BE71940008C756 /* Build configuration list for PBXNativeTarget "PrettyJSON Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E384B03024BE71940008C756 /* Debug */,
+				E384B03124BE71940008C756 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E384B03324BE71940008C756 /* Build configuration list for PBXNativeTarget "PrettyJSON" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E384B03424BE71940008C756 /* Debug */,
+				E384B03524BE71940008C756 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E384AFFD24BE71940008C756 /* Project object */;
+}
