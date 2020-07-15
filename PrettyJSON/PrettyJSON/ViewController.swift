@@ -31,20 +31,20 @@ class ViewController: NSViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.appNameLabel.stringValue = "PrettyJSON";
+        self.appNameLabel.stringValue = "PrettyJSON for Safari";
     }
     
     @IBAction func openAboutURL(_ sender: Any) {
         let url = URL(string: "https://shamur.ai/bin/prettyJSON/")!
         if NSWorkspace.shared.open(url) {
             print("default browser was successfully opened")
-
         }
     }
     
     @IBAction func openSafariExtensionPreferences(_ sender: AnyObject?) {
         SFSafariApplication.showPreferencesForExtension(withIdentifier: "ai.shamur.bin.PrettyJSON-Extension") { error in
             if let _ = error {
+                print("couldnt open safari extensions")
             }
         }
     }
