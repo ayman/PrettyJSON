@@ -3,6 +3,8 @@
 ## App Store
 [PrettyJSON for Safari](https://apps.apple.com/us/app/id1445328303) now in the Apple App Store!
 
+![Example Animation](https://raw.githubusercontent.com/ayman/PrettyJSON/master/Images/example.gif)
+
 ## About
 So Safari 12 changed its extensions format. I had a plugin that worked to pretty print JSON but now it won't work.
 
