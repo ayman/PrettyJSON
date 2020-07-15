@@ -42,7 +42,7 @@ class ViewController: NSViewController {
     }
     
     @IBAction func openSafariExtensionPreferences(_ sender: AnyObject?) {
-        SFSafariApplication.showPreferencesForExtension(withIdentifier: "ai.shamur.bin.PrettyJSON-Extension") { error in
+        SFSafariApplication.showPreferencesForExtension(withIdentifier: "ai.shamur.bin.PrettyJSON.SafariExtension") { error in
             if let _ = error {
                 print("couldnt open safari extensions")
             }
