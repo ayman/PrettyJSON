@@ -16,12 +16,5 @@ Right now three things are needed:
 
 Follow the Issues for more.
 
-## Building
-
-You need a host application to build and test the plugin, this is the cocoa app called `PrettyJSON`.
-
-The actual extension is called `SafariExtension`.
-
-Follow along with the [Apple instructions](https://developer.apple.com/documentation/safariservices/safari_app_extensions/building_a_safari_app_extension) to get a sense of how this all works. 
 
 
