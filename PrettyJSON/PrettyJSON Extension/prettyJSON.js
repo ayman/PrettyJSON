@@ -31,25 +31,26 @@ window.onfocus = function(event) {
 };
 
 document.addEventListener('DOMContentLoaded', function(event) {
-  window.aiShamurPrettyJSON.raw = document.body.innerText;
-  window.aiShamurPrettyJSON.rawHTML = document.body.innerHTML;
-  try {
-    var j = JSON.parse(window.aiShamurPrettyJSON.raw);
-    window.aiShamurPrettyJSON.pretty = j;
-    window.aiShamurPrettyJSON.pretty = JSON.stringify(j, null, 2);
-    window.aiShamurPrettyJSON.loaded = true;
-  } catch (e) {
-    window.aiShamurPrettyJSON.loaded = false;
-  }
-  if (window.aiShamurPrettyJSON.loaded !== false) {
-    var s = syntaxHighlight(window.aiShamurPrettyJSON.pretty);
-    s = '<pre class="aiShamurPrettyJSON">' + s + '</pre>';
-    window.aiShamurPrettyJSON.pretty = s;
-    document.body.innerHTML = window.aiShamurPrettyJSON.pretty;
-    window.aiShamurPrettyJSON.toggled = true;
-    safari.extension.dispatchMessage('jsonOn');
-  } else {
-    safari.extension.dispatchMessage('jsonDisabled');
+  if (document.contentType === 'application/json') {
+    window.aiShamurPrettyJSON.raw = document.body.innerText;
+    window.aiShamurPrettyJSON.rawHTML = document.body.innerHTML;
+    try {
+      var j = JSON.parse(window.aiShamurPrettyJSON.raw);
+      window.aiShamurPrettyJSON.pretty = j;
+      window.aiShamurPrettyJSON.pretty = JSON.stringify(j, null, 2);
+      console.log(window.aiShamurPrettyJSON);
+      var s = syntaxHighlight(window.aiShamurPrettyJSON.pretty);
+      s = '<pre class="aiShamurPrettyJSON">' + s + '</pre>';
+      window.aiShamurPrettyJSON.pretty = s;
+      document.body.innerHTML = window.aiShamurPrettyJSON.pretty;
+      window.aiShamurPrettyJSON.toggled = true;
+      window.aiShamurPrettyJSON.loaded = true;
+      safari.extension.dispatchMessage('jsonOn');
+    } catch (e) {
+      window.aiShamurPrettyJSON.loaded = false;
+      safari.extension.dispatchMessage('jsonDisabled');
+    }
+    console.log(window.aiShamurPrettyJSON);
   }
 });
 
@@ -78,8 +79,8 @@ function syntaxHighlight(json) {
   );
 }
 
-function handleMessage(e) {
-  if (e.name == 'toggleJSON' && aiShamurPrettyJSON.loaded !== false) {
+function handleMessage(event) {
+  if (event.name == 'toggleJSON' && aiShamurPrettyJSON.loaded !== false) {
     if (window.aiShamurPrettyJSON.toggled === true) {
       safari.extension.dispatchMessage('jsonOff');
       document.body.innerHTML = window.aiShamurPrettyJSON.rawHTML;
@@ -92,7 +93,7 @@ function handleMessage(e) {
   }
 }
 
-function activate(e) {
+function activate(event) {
   if (window.aiShamurPrettyJSON.loaded === false) {
     safari.extension.dispatchMessage('jsonDisabled');
   } else if (window.aiShamurPrettyJSON.toggled === true) {
