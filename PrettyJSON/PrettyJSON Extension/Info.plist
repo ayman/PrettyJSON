@@ -64,7 +64,7 @@
 		</dict>
 	</dict>
 	<key>NSHumanReadableCopyright</key>
-	<string>Copyright © 2020 David A. Shamma under GNU GPL 3.0</string>
+	<string>Copyright © 2024 David A. Shamma under GNU GPL 3.0</string>
 	<key>NSHumanReadableDescription</key>
 	<string>Yet another JSON Pretty Printer. No server logs, no cost, no nonsense. </string>
 </dict>

@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="16097"/>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="23504"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -108,22 +109,22 @@
             <objects>
                 <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="PrettyJSON_for_Safari" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="512" height="358"/>
+                        <rect key="frame" x="0.0" y="0.0" width="512" height="356"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <stackView distribution="fill" orientation="vertical" alignment="centerX" spacing="16" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZLV-xE-AGT">
-                                <rect key="frame" x="0.0" y="34" width="512" height="279"/>
+                                <rect key="frame" x="0.0" y="34" width="512" height="277"/>
                                 <subviews>
                                     <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FWV-e2-WQh" userLabel="IconView">
-                                        <rect key="frame" x="232" y="231" width="48" height="48"/>
+                                        <rect key="frame" x="232" y="229" width="48" height="48"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="48" id="eGY-0q-uRI"/>
                                             <constraint firstAttribute="width" constant="48" id="sfj-gr-tnN"/>
                                         </constraints>
                                         <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="AppStore" id="Hhb-TZ-Dhg"/>
                                     </imageView>
-                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EB0-ac-UZR">
-                                        <rect key="frame" x="149" y="199" width="214" height="16"/>
+                                    <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EB0-ac-UZR">
+                                        <rect key="frame" x="149" y="197" width="214" height="16"/>
                                         <textFieldCell key="cell" lineBreakMode="clipping" title="PrettyJSON for Safari for Safari" id="S7v-7o-3vW">
                                             <font key="font" metaFont="systemHeavy" size="13"/>
                                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -131,7 +132,7 @@
                                         </textFieldCell>
                                     </textField>
                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ooh-eV-eLQ">
-                                        <rect key="frame" x="202" y="155" width="109" height="32"/>
+                                        <rect key="frame" x="205" y="154" width="103" height="32"/>
                                         <buttonCell key="cell" type="push" title="More info..." alternateTitle="Install" bezelStyle="rounded" alignment="center" lineBreakMode="truncatingMiddle" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Srx-0j-A4D">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="system"/>
@@ -143,16 +144,16 @@ DQ
                                             </connections>
                                         </buttonCell>
                                     </button>
-                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="qzY-U4-nlh">
-                                        <rect key="frame" x="156" y="133" width="200" height="13"/>
-                                        <textFieldCell key="cell" lineBreakMode="clipping" title="©2020 David A. Shamma • GNU GPL 3.0" id="zp3-zF-2Al">
+                                    <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="qzY-U4-nlh">
+                                        <rect key="frame" x="156" y="132" width="200" height="13"/>
+                                        <textFieldCell key="cell" lineBreakMode="clipping" title="©2024 David A. Shamma • GNU GPL 3.0" id="zp3-zF-2Al">
                                             <font key="font" metaFont="system" size="10"/>
                                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                         </textFieldCell>
                                     </textField>
-                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="KN5-xQ-uzG">
-                                        <rect key="frame" x="89" y="37" width="335" height="80"/>
+                                    <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="KN5-xQ-uzG">
+                                        <rect key="frame" x="89" y="36" width="335" height="80"/>
                                         <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" id="xSm-4a-V99">
                                             <font key="font" metaFont="system"/>
                                             <string key="title">Ever want a pretty JSON view in Safari?  
@@ -165,7 +166,7 @@ You can add this extension to Safari by clicking below.</string>
                                         </textFieldCell>
                                     </textField>
                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="poH-mN-Nzx">
-                                        <rect key="frame" x="115" y="-7" width="282" height="32"/>
+                                        <rect key="frame" x="118" y="-7" width="276" height="32"/>
                                         <buttonCell key="cell" type="push" title="Open in Safari Extensions Preferences…" alternateTitle="Install" bezelStyle="rounded" alignment="center" lineBreakMode="truncatingMiddle" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="0Q9-aG-9FI">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="system"/>

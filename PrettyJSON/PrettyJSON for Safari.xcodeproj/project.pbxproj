@@ -3,16 +3,15 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E384B00924BE71940008C756 /* PrettyJSON.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = E384B00824BE71940008C756 /* PrettyJSON.entitlements */; };
 		E384B00B24BE71940008C756 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E384B00A24BE71940008C756 /* AppDelegate.swift */; };
 		E384B00E24BE71940008C756 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E384B00C24BE71940008C756 /* Main.storyboard */; };
 		E384B01024BE71940008C756 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E384B00F24BE71940008C756 /* ViewController.swift */; };
 		E384B01224BE71940008C756 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E384B01124BE71940008C756 /* Assets.xcassets */; };
-		E384B01924BE71940008C756 /* PrettyJSON Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = E384B01824BE71940008C756 /* PrettyJSON Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		E384B01924BE71940008C756 /* PrettyJSON Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = E384B01824BE71940008C756 /* PrettyJSON Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		E384B01E24BE71940008C756 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E384B01D24BE71940008C756 /* Cocoa.framework */; };
 		E384B02124BE71940008C756 /* SafariExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E384B02024BE71940008C756 /* SafariExtensionHandler.swift */; };
 		E384B02324BE71940008C756 /* SafariExtensionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E384B02224BE71940008C756 /* SafariExtensionViewController.swift */; };
@@ -36,15 +35,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		E384B03224BE71940008C756 /* Embed App Extensions */ = {
+		E384B03224BE71940008C756 /* Embed Foundation Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				E384B01924BE71940008C756 /* PrettyJSON Extension.appex in Embed App Extensions */,
+				E384B01924BE71940008C756 /* PrettyJSON Extension.appex in Embed Foundation Extensions */,
 			);
-			name = "Embed App Extensions";
+			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -159,7 +158,7 @@
 				E384B00124BE71940008C756 /* Sources */,
 				E384B00224BE71940008C756 /* Frameworks */,
 				E384B00324BE71940008C756 /* Resources */,
-				E384B03224BE71940008C756 /* Embed App Extensions */,
+				E384B03224BE71940008C756 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
@@ -194,8 +193,9 @@
 		E384AFFD24BE71940008C756 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 1150;
-				LastUpgradeCheck = 1150;
+				LastUpgradeCheck = 1610;
 				ORGANIZATIONNAME = "David A. Shamma";
 				TargetAttributes = {
 					E384B00424BE71940008C756 = {
@@ -230,7 +230,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E384B00924BE71940008C756 /* PrettyJSON.entitlements in Resources */,
 				E384B03724BE75750008C756 /* AppIcon.icns in Resources */,
 				E384B01224BE71940008C756 /* Assets.xcassets in Resources */,
 				E384B00E24BE71940008C756 /* Main.storyboard in Resources */,
@@ -327,6 +326,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -334,9 +334,11 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -387,6 +389,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -394,9 +397,11 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -420,14 +425,17 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "PrettyJSON Extension/PrettyJSON_Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 7;
+				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_TEAM = 4C99K25T93;
 				INFOPLIST_FILE = "PrettyJSON Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 					"@executable_path/../../../../Frameworks",
 				);
-				MARKETING_VERSION = 1.5;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = ai.shamur.bin.PrettyJSON.SafariExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -441,14 +449,17 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "PrettyJSON Extension/PrettyJSON_Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 7;
+				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_TEAM = 4C99K25T93;
 				INFOPLIST_FILE = "PrettyJSON Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 					"@executable_path/../../../../Frameworks",
 				);
-				MARKETING_VERSION = 1.5;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = ai.shamur.bin.PrettyJSON.SafariExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -459,18 +470,21 @@
 		E384B03424BE71940008C756 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = PrettyJSON/PrettyJSON.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 7;
+				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_TEAM = 4C99K25T93;
 				INFOPLIST_FILE = PrettyJSON/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 1.5;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = ai.shamur.bin.PrettyJSON;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -480,18 +494,21 @@
 		E384B03524BE71940008C756 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = PrettyJSON/PrettyJSON.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 7;
+				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_TEAM = 4C99K25T93;
 				INFOPLIST_FILE = PrettyJSON/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 1.5;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = ai.shamur.bin.PrettyJSON;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function(event) {
       var j = JSON.parse(window.aiShamurPrettyJSON.raw);
       window.aiShamurPrettyJSON.pretty = j;
       window.aiShamurPrettyJSON.pretty = JSON.stringify(j, null, 2);
-      console.log(window.aiShamurPrettyJSON);
+      // console.log(window.aiShamurPrettyJSON);
       var s = syntaxHighlight(window.aiShamurPrettyJSON.pretty);
       s = '<pre class="aiShamurPrettyJSON">' + s + '</pre>';
       window.aiShamurPrettyJSON.pretty = s;
@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', function(event) {
       window.aiShamurPrettyJSON.loaded = false;
       safari.extension.dispatchMessage('jsonDisabled');
     }
-    console.log(window.aiShamurPrettyJSON);
+    // console.log(window.aiShamurPrettyJSON);
   }
 });
 
@@ -62,17 +62,17 @@ function syntaxHighlight(json) {
   return json.replace(
     /("(\\u[a-zA-Z0-9]{4}|\\[^u]|[^\\"])*"(\s*:)?|\b(true|false|null)\b|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?)/g,
     function(match) {
-      var cls = 'number';
+      var cls = 'aiShamurPrettyNumber';
       if (/^"/.test(match)) {
         if (/:$/.test(match)) {
-          cls = 'key';
+          cls = 'aiShamurPrettyKey';
         } else {
-          cls = 'string';
+          cls = 'aiShamurPrettyString';
         }
       } else if (/true|false/.test(match)) {
-        cls = 'boolean';
+        cls = 'aiShamurPrettyBoolean';
       } else if (/null/.test(match)) {
-        cls = 'null';
+        cls = 'aiShamurPrettyNull';
       }
       return '<span class="' + cls + '">' + match + '</span>';
     }
