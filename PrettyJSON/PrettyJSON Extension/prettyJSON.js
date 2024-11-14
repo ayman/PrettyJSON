@@ -26,11 +26,11 @@ var aiShamurPrettyJSON = { raw: '', rawHTML: '', pretty: '', toggled: false, loa
 
 safari.self.addEventListener('message', handleMessage, false);
 
-window.onfocus = function(event) {
+window.onfocus = function (event) {
   activate(event);
 };
 
-document.addEventListener('DOMContentLoaded', function(event) {
+document.addEventListener('DOMContentLoaded', function (event) {
   if (document.contentType === 'application/json') {
     window.aiShamurPrettyJSON.raw = document.body.innerText;
     window.aiShamurPrettyJSON.rawHTML = document.body.innerHTML;
@@ -54,14 +54,16 @@ document.addEventListener('DOMContentLoaded', function(event) {
   }
 });
 
-function syntaxHighlight(json) {
-  if (typeof json != 'string') {
+function syntaxHighlight(jsonIn) {
+  if (typeof jsonIn != 'string') {
     json = JSON.stringify(json, null, 2);
+  } else {
+    json = jsonIn;
   }
   json = json.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
   return json.replace(
     /("(\\u[a-zA-Z0-9]{4}|\\[^u]|[^\\"])*"(\s*:)?|\b(true|false|null)\b|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?)/g,
-    function(match) {
+    function (match) {
       var cls = 'aiShamurPrettyNumber';
       if (/^"/.test(match)) {
         if (/:$/.test(match)) {
