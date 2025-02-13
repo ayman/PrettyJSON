@@ -31,7 +31,8 @@ window.onfocus = function (event) {
 };
 
 document.addEventListener('DOMContentLoaded', function (event) {
-  if (document.contentType === 'application/json') {
+  const contentType = document.contentType.split(";")[0];
+  if (contentType === 'application/json' || contentType === 'application/activity+json') {
     window.aiShamurPrettyJSON.raw = document.body.innerText;
     window.aiShamurPrettyJSON.rawHTML = document.body.innerHTML;
     try {
