@@ -30,8 +30,54 @@ window.onfocus = function (event) {
   activate(event);
 };
 
+/**
+ * Generated using Wikidata Query Service, using this SPARQL Query:
+ ```sparql
+select (concat(
+  "const contentTypesJSON = [",
+  group_concat(concat("'", ?mimeString, "'"); separator=", "),
+  "];"
+) as ?jsArray)
+where {
+  ?mimeType wdt:P1163 ?mimeString .
+  filter(strends(?mimeString, "+json"))
+}
+  ```
+ */
+const contentTypesJSON = [
+  'application/geo+json',
+  'application/vnd.docker.container.image.v1+json',
+  'application/vnd.docker.distribution.manifest.list.v2+json',
+  'application/vnd.docker.distribution.manifest.v1+json',
+  'application/vnd.docker.distribution.manifest.v2+json',
+  'application/vnd.docker.plugin.v1+json',
+  'application/jsonml+json',
+  'application/hal+json',
+  'application/x-web-app-manifest+json',
+  'application/x-ipynb+json',
+  'application/x-ipynb+json',
+  'application/scim+json',
+  'application/feed+json',
+  'model/gltf+json',
+  'application/activity+json',
+  'application/activity+json',
+  'application/sparql-results+json',
+  'application/rdap+json',
+  'application/grpc+json',
+  'application/ld+json',
+  'application/json-patch+json',
+  'application/rdf+json',
+  'image/png+json',
+  'application/schema+json',
+  'application/webpush-options+json',
+  'application/vnd.citationstyles.csl+json',
+  'application/vnd.heroku+json',
+  'application/cwl+json',
+  'application/vnd.api+json'
+]
+
 document.addEventListener('DOMContentLoaded', function (event) {
-  if (document.contentType === 'application/json') {
+  if (contentTypesJSON.includes(document.contentType.split(";")[0].trim())) {
     window.aiShamurPrettyJSON.raw = document.body.innerText;
     window.aiShamurPrettyJSON.rawHTML = document.body.innerHTML;
     try {
