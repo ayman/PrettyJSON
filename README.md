@@ -1,5 +1,7 @@
 # PrettyJSON
 
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/N4N872G5D)
+
 ## App Store
 [PrettyJSON for Safari](https://apps.apple.com/us/app/id1445328303) now in the Apple App Store!
 
