@@ -1,6 +1,13 @@
 aiShamurPrettyJSON {outline: 1px solid #444; padding: 5px; margin: 5px; }
+aiShamurPrettyJSONDark {outline: 1px solid #444; padding: 5px; margin: 5px; }
 .aiShamurPrettyJSON .aiShamurPrettyString { color: green; }
 .aiShamurPrettyJSON .aiShamurPrettyNumber { color: darkorange; }
 .aiShamurPrettyJSON .aiShamurPrettyBoolean { color: blue; }
 .aiShamurPrettyJSON .aiShamurPrettyNull { color: red; }
 .aiShamurPrettyJSON .aiShamurPrettyKey { color: magenta; }
+
+.aiShamurPrettyJSONDark .aiShamurPrettyString { color: limegreen; }
+.aiShamurPrettyJSONDark .aiShamurPrettyNumber { color: orange; }
+.aiShamurPrettyJSONDark .aiShamurPrettyBoolean { color: dodgerblue; }
+.aiShamurPrettyJSONDark .aiShamurPrettyNull { color: tomato; }
+.aiShamurPrettyJSONDark .aiShamurPrettyKey { color: fuchsia; }

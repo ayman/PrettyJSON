@@ -45,35 +45,35 @@ where {
   ```
  */
 const contentTypesJSON = [
-  'application/geo+json',
-  'application/vnd.docker.container.image.v1+json',
-  'application/vnd.docker.distribution.manifest.list.v2+json',
-  'application/vnd.docker.distribution.manifest.v1+json',
-  'application/vnd.docker.distribution.manifest.v2+json',
-  'application/vnd.docker.plugin.v1+json',
-  'application/jsonml+json',
-  'application/hal+json',
-  'application/x-web-app-manifest+json',
-  'application/x-ipynb+json',
-  'application/x-ipynb+json',
-  'application/scim+json',
-  'application/feed+json',
-  'model/gltf+json',
-  'application/activity+json',
-  'application/activity+json',
-  'application/sparql-results+json',
-  'application/rdap+json',
-  'application/grpc+json',
-  'application/ld+json',
-  'application/json-patch+json',
-  'application/rdf+json',
-  'image/png+json',
-  'application/schema+json',
-  'application/webpush-options+json',
-  'application/vnd.citationstyles.csl+json',
-  'application/vnd.heroku+json',
-  'application/cwl+json',
-  'application/vnd.api+json'
+    'application/activity+json',
+    'application/cwl+json',
+    'application/feed+json',
+    'application/geo+json',
+    'application/grpc+json',
+    'application/hal+json',
+    'application/json',
+    'application/json-patch+json',
+    'application/jsonml+json',
+    'application/ld+json',
+    'application/rdap+json',
+    'application/rdf+json',
+    'application/schema+json',
+    'application/scim+json',
+    'application/sparql-results+json',
+    'application/vnd.api+json',
+    'application/vnd.citationstyles.csl+json',
+    'application/vnd.docker.container.image.v1+json',
+    'application/vnd.docker.distribution.manifest.list.v2+json',
+    'application/vnd.docker.distribution.manifest.v1+json',
+    'application/vnd.docker.distribution.manifest.v2+json',
+    'application/vnd.docker.plugin.v1+json',
+    'application/vnd.heroku+json',
+    'application/webpush-options+json',
+    'application/x-ipynb+json',
+    'application/x-ipynb+json',
+    'application/x-web-app-manifest+json',
+    'image/png+json',
+    'model/gltf+json'
 ]
 
 document.addEventListener('DOMContentLoaded', function (event) {
@@ -87,6 +87,12 @@ document.addEventListener('DOMContentLoaded', function (event) {
       // console.log(window.aiShamurPrettyJSON);
       var s = syntaxHighlight(window.aiShamurPrettyJSON.pretty);
       s = '<pre class="aiShamurPrettyJSON">' + s + '</pre>';
+      if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+          s = '<pre class="aiShamurPrettyJSONDark">' + s + '</pre>';
+      }
+      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+          window.location.reload();
+      });
       window.aiShamurPrettyJSON.pretty = s;
       document.body.innerHTML = window.aiShamurPrettyJSON.pretty;
       window.aiShamurPrettyJSON.toggled = true;

@@ -146,7 +146,7 @@ DQ
                                     </button>
                                     <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="qzY-U4-nlh">
                                         <rect key="frame" x="156" y="132" width="200" height="13"/>
-                                        <textFieldCell key="cell" lineBreakMode="clipping" title="©2024 David A. Shamma • GNU GPL 3.0" id="zp3-zF-2Al">
+                                        <textFieldCell key="cell" lineBreakMode="clipping" title="©2025 David A. Shamma • GNU GPL 3.0" id="zp3-zF-2Al">
                                             <font key="font" metaFont="system" size="10"/>
                                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
