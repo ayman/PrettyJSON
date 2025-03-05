@@ -3,7 +3,9 @@
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/N4N872G5D)
 
 ## App Store
-[PrettyJSON for Safari](https://apps.apple.com/us/app/id1445328303) now in the Apple App Store!
+<a href="https://apps.apple.com/us/app/prettyjson-for-safari/id1445328303?mt=12&itscg=30200&itsct=apps_box_badge&mttnsubad=1445328303" style="display: inline-block;">
+<img src="https://toolbox.marketingtools.apple.com/api/v2/badges/download-on-the-app-store/black/en-us?releaseDate=1594684800" alt="Download on the App Store" style="width: 124px; vertical-align: middle; object-fit: contain;" />
+</a>
 
 ![Example Animation](https://raw.githubusercontent.com/ayman/PrettyJSON/master/Images/example.gif)
 
