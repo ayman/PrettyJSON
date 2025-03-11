@@ -7,6 +7,8 @@
 
 ![Example Animation](https://raw.githubusercontent.com/ayman/PrettyJSON/master/Images/example.gif)
 
+[Example JSON](https://shamur.ai/bin/prettyJSON/example.json) should prettyify and the url should be clickable.
+
 ## About
 So Safari 12 changed its extensions format. I had a plugin that worked to pretty print JSON but now it won't work.
 

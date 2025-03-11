@@ -22,12 +22,18 @@
 //  along with this program. If not, see <http://www.gnu.org/licenses/>.
 //
 
-var aiShamurPrettyJSON = { raw: '', rawHTML: '', pretty: '', toggled: false, loaded: false };
+var aiShamurPrettyJSON = {
+    raw: '',
+    rawHTML: '',
+    pretty: '',
+    toggled: false,
+    loaded: false,
+};
 
 safari.self.addEventListener('message', handleMessage, false);
 
 window.onfocus = function (event) {
-  activate(event);
+    activate(event);
 };
 
 /**
@@ -73,86 +79,102 @@ const contentTypesJSON = [
     'application/x-ipynb+json',
     'application/x-web-app-manifest+json',
     'image/png+json',
-    'model/gltf+json'
-]
+    'model/gltf+json',
+];
 
 document.addEventListener('DOMContentLoaded', function (event) {
-  if (contentTypesJSON.includes(document.contentType.split(";")[0].trim())) {
-    window.aiShamurPrettyJSON.raw = document.body.innerText;
-    window.aiShamurPrettyJSON.rawHTML = document.body.innerHTML;
-    try {
-      var j = JSON.parse(window.aiShamurPrettyJSON.raw);
-      window.aiShamurPrettyJSON.pretty = j;
-      window.aiShamurPrettyJSON.pretty = JSON.stringify(j, null, 2);
-      // console.log(window.aiShamurPrettyJSON);
-      var s = syntaxHighlight(window.aiShamurPrettyJSON.pretty);
-      s = '<pre class="aiShamurPrettyJSON">' + s + '</pre>';
-      if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-          s = '<pre class="aiShamurPrettyJSONDark">' + s + '</pre>';
-      }
-      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
-          window.location.reload();
-      });
-      window.aiShamurPrettyJSON.pretty = s;
-      document.body.innerHTML = window.aiShamurPrettyJSON.pretty;
-      window.aiShamurPrettyJSON.toggled = true;
-      window.aiShamurPrettyJSON.loaded = true;
-      safari.extension.dispatchMessage('jsonOn');
-    } catch (e) {
-      window.aiShamurPrettyJSON.loaded = false;
-      safari.extension.dispatchMessage('jsonDisabled');
+    if (contentTypesJSON.includes(document.contentType.split(';')[0].trim())) {
+        window.aiShamurPrettyJSON.raw = document.body.innerText;
+        window.aiShamurPrettyJSON.rawHTML = document.body.innerHTML;
+        try {
+            var j = JSON.parse(window.aiShamurPrettyJSON.raw);
+            window.aiShamurPrettyJSON.pretty = j;
+            window.aiShamurPrettyJSON.pretty = JSON.stringify(j, null, 2);
+            // console.log(window.aiShamurPrettyJSON);
+            var s = syntaxHighlight(window.aiShamurPrettyJSON.pretty);
+            s = replaceUrlsWithLinks(s);
+            s = '<pre class="aiShamurPrettyJSON">' + s + '</pre>';
+            if (
+                window.matchMedia &&
+                window.matchMedia('(prefers-color-scheme: dark)').matches
+            ) {
+                s = '<pre class="aiShamurPrettyJSONDark">' + s + '</pre>';
+            }
+            window
+                .matchMedia('(prefers-color-scheme: dark)')
+                .addEventListener('change', (event) => {
+                    window.location.reload();
+                });
+            window.aiShamurPrettyJSON.pretty = s;
+            document.body.innerHTML = window.aiShamurPrettyJSON.pretty;
+            window.aiShamurPrettyJSON.toggled = true;
+            window.aiShamurPrettyJSON.loaded = true;
+            safari.extension.dispatchMessage('jsonOn');
+        } catch (e) {
+            window.aiShamurPrettyJSON.loaded = false;
+            safari.extension.dispatchMessage('jsonDisabled');
+        }
+        // console.log(window.aiShamurPrettyJSON);
     }
-    // console.log(window.aiShamurPrettyJSON);
-  }
 });
 
+function replaceUrlsWithLinks(text) {
+    const expressionWithHttp =
+        /(https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*))/gi;
+    const regex = new RegExp(expressionWithHttp);
+    return text.replace(regex, "<a href='$1'>$1</a>");
+}
+
 function syntaxHighlight(jsonIn) {
-  if (typeof jsonIn != 'string') {
-    json = JSON.stringify(json, null, 2);
-  } else {
-    json = jsonIn;
-  }
-  json = json.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-  return json.replace(
-    /("(\\u[a-zA-Z0-9]{4}|\\[^u]|[^\\"])*"(\s*:)?|\b(true|false|null)\b|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?)/g,
-    function (match) {
-      var cls = 'aiShamurPrettyNumber';
-      if (/^"/.test(match)) {
-        if (/:$/.test(match)) {
-          cls = 'aiShamurPrettyKey';
-        } else {
-          cls = 'aiShamurPrettyString';
-        }
-      } else if (/true|false/.test(match)) {
-        cls = 'aiShamurPrettyBoolean';
-      } else if (/null/.test(match)) {
-        cls = 'aiShamurPrettyNull';
-      }
-      return '<span class="' + cls + '">' + match + '</span>';
+    if (typeof jsonIn != 'string') {
+        json = JSON.stringify(json, null, 2);
+    } else {
+        json = jsonIn;
     }
-  );
+    json = json
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;');
+    return json.replace(
+        /("(\\u[a-zA-Z0-9]{4}|\\[^u]|[^\\"])*"(\s*:)?|\b(true|false|null)\b|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?)/g,
+        function (match) {
+            var cls = 'aiShamurPrettyNumber';
+            if (/^"/.test(match)) {
+                if (/:$/.test(match)) {
+                    cls = 'aiShamurPrettyKey';
+                } else {
+                    cls = 'aiShamurPrettyString';
+                }
+            } else if (/true|false/.test(match)) {
+                cls = 'aiShamurPrettyBoolean';
+            } else if (/null/.test(match)) {
+                cls = 'aiShamurPrettyNull';
+            }
+            return '<span class="' + cls + '">' + match + '</span>';
+        }
+    );
 }
 
 function handleMessage(event) {
-  if (event.name == 'toggleJSON' && aiShamurPrettyJSON.loaded !== false) {
-    if (window.aiShamurPrettyJSON.toggled === true) {
-      safari.extension.dispatchMessage('jsonOff');
-      document.body.innerHTML = window.aiShamurPrettyJSON.rawHTML;
-      window.aiShamurPrettyJSON.toggled = false;
-    } else {
-      safari.extension.dispatchMessage('jsonOn');
-      document.body.innerHTML = window.aiShamurPrettyJSON.pretty;
-      window.aiShamurPrettyJSON.toggled = true;
+    if (event.name == 'toggleJSON' && aiShamurPrettyJSON.loaded !== false) {
+        if (window.aiShamurPrettyJSON.toggled === true) {
+            safari.extension.dispatchMessage('jsonOff');
+            document.body.innerHTML = window.aiShamurPrettyJSON.rawHTML;
+            window.aiShamurPrettyJSON.toggled = false;
+        } else {
+            safari.extension.dispatchMessage('jsonOn');
+            document.body.innerHTML = window.aiShamurPrettyJSON.pretty;
+            window.aiShamurPrettyJSON.toggled = true;
+        }
     }
-  }
 }
 
 function activate(event) {
-  if (window.aiShamurPrettyJSON.loaded === false) {
-    safari.extension.dispatchMessage('jsonDisabled');
-  } else if (window.aiShamurPrettyJSON.toggled === true) {
-    safari.extension.dispatchMessage('jsonOn');
-  } else {
-    safari.extension.dispatchMessage('jsonOff');
-  }
+    if (window.aiShamurPrettyJSON.loaded === false) {
+        safari.extension.dispatchMessage('jsonDisabled');
+    } else if (window.aiShamurPrettyJSON.toggled === true) {
+        safari.extension.dispatchMessage('jsonOn');
+    } else {
+        safari.extension.dispatchMessage('jsonOff');
+    }
 }
