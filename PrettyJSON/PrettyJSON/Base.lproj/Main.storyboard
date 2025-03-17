@@ -123,7 +123,7 @@
                                         </constraints>
                                         <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="AppStore" id="Hhb-TZ-Dhg"/>
                                     </imageView>
-                                    <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EB0-ac-UZR">
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EB0-ac-UZR">
                                         <rect key="frame" x="149" y="197" width="214" height="16"/>
                                         <textFieldCell key="cell" lineBreakMode="clipping" title="PrettyJSON for Safari for Safari" id="S7v-7o-3vW">
                                             <font key="font" metaFont="systemHeavy" size="13"/>
@@ -144,7 +144,7 @@ DQ
                                             </connections>
                                         </buttonCell>
                                     </button>
-                                    <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="qzY-U4-nlh">
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="qzY-U4-nlh">
                                         <rect key="frame" x="156" y="132" width="200" height="13"/>
                                         <textFieldCell key="cell" lineBreakMode="clipping" title="©2025 David A. Shamma • GNU GPL 3.0" id="zp3-zF-2Al">
                                             <font key="font" metaFont="system" size="10"/>
@@ -152,7 +152,7 @@ DQ
                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                         </textFieldCell>
                                     </textField>
-                                    <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="KN5-xQ-uzG">
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="KN5-xQ-uzG">
                                         <rect key="frame" x="89" y="36" width="335" height="80"/>
                                         <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" id="xSm-4a-V99">
                                             <font key="font" metaFont="system"/>
