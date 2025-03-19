@@ -108,31 +108,31 @@
         <scene sceneID="hIz-AP-VOD">
             <objects>
                 <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="PrettyJSON_for_Safari" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="512" height="356"/>
+                    <view key="view" misplaced="YES" id="m2S-Jp-Qdl">
+                        <rect key="frame" x="0.0" y="0.0" width="512" height="423"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <stackView distribution="fill" orientation="vertical" alignment="centerX" spacing="16" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZLV-xE-AGT">
-                                <rect key="frame" x="0.0" y="34" width="512" height="277"/>
+                            <stackView distribution="fill" orientation="vertical" alignment="centerX" spacing="25" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZLV-xE-AGT">
+                                <rect key="frame" x="0.0" y="34" width="512" height="362"/>
                                 <subviews>
                                     <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FWV-e2-WQh" userLabel="IconView">
-                                        <rect key="frame" x="232" y="229" width="48" height="48"/>
+                                        <rect key="frame" x="232" y="314" width="48" height="48"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="48" id="eGY-0q-uRI"/>
                                             <constraint firstAttribute="width" constant="48" id="sfj-gr-tnN"/>
                                         </constraints>
                                         <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="AppStore" id="Hhb-TZ-Dhg"/>
                                     </imageView>
-                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EB0-ac-UZR">
-                                        <rect key="frame" x="149" y="197" width="214" height="16"/>
-                                        <textFieldCell key="cell" lineBreakMode="clipping" title="PrettyJSON for Safari for Safari" id="S7v-7o-3vW">
-                                            <font key="font" metaFont="systemHeavy" size="13"/>
+                                    <textField focusRingType="none" horizontalHuggingPriority="255" verticalHuggingPriority="800" horizontalCompressionResistancePriority="800" verticalCompressionResistancePriority="800" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EB0-ac-UZR">
+                                        <rect key="frame" x="189" y="273" width="134" height="16"/>
+                                        <textFieldCell key="cell" controlSize="large" title="PrettyJSON for Safari" id="S7v-7o-3vW">
+                                            <font key="font" metaFont="system"/>
                                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                         </textFieldCell>
                                     </textField>
                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ooh-eV-eLQ">
-                                        <rect key="frame" x="205" y="154" width="103" height="32"/>
+                                        <rect key="frame" x="205" y="226" width="103" height="27"/>
                                         <buttonCell key="cell" type="push" title="More info..." alternateTitle="Install" bezelStyle="rounded" alignment="center" lineBreakMode="truncatingMiddle" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Srx-0j-A4D">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="system"/>
@@ -144,16 +144,30 @@ DQ
                                             </connections>
                                         </buttonCell>
                                     </button>
-                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="qzY-U4-nlh">
-                                        <rect key="frame" x="156" y="132" width="200" height="13"/>
+                                    <button verticalHuggingPriority="750" id="LMX-JH-Akw">
+                                        <rect key="frame" x="205" y="181" width="101" height="32"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <buttonCell key="cell" type="push" title="Tester URL" alternateTitle="Install" bezelStyle="rounded" alignment="center" lineBreakMode="truncatingMiddle" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="LEJ-wS-UgJ">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                            <string key="keyEquivalent" base64-UTF8="YES">
+DQ
+</string>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="openTestURL:" target="XfG-lQ-9wD" id="HyF-8T-wga"/>
+                                        </connections>
+                                    </button>
+                                    <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="qzY-U4-nlh">
+                                        <rect key="frame" x="156" y="150" width="200" height="13"/>
                                         <textFieldCell key="cell" lineBreakMode="clipping" title="©2025 David A. Shamma • GNU GPL 3.0" id="zp3-zF-2Al">
                                             <font key="font" metaFont="system" size="10"/>
                                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                         </textFieldCell>
                                     </textField>
-                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="KN5-xQ-uzG">
-                                        <rect key="frame" x="89" y="36" width="335" height="80"/>
+                                    <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="KN5-xQ-uzG">
+                                        <rect key="frame" x="89" y="45" width="335" height="80"/>
                                         <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" id="xSm-4a-V99">
                                             <font key="font" metaFont="system"/>
                                             <string key="title">Ever want a pretty JSON view in Safari?  
@@ -186,8 +200,10 @@ DQ
                                     <integer value="1000"/>
                                     <integer value="1000"/>
                                     <integer value="1000"/>
+                                    <integer value="1000"/>
                                 </visibilityPriorities>
                                 <customSpacing>
+                                    <real value="3.4028234663852886e+38"/>
                                     <real value="3.4028234663852886e+38"/>
                                     <real value="3.4028234663852886e+38"/>
                                     <real value="3.4028234663852886e+38"/>
@@ -210,7 +226,7 @@ DQ
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="665"/>
+            <point key="canvasLocation" x="75" y="664.5"/>
         </scene>
     </scenes>
     <resources>

@@ -40,7 +40,14 @@ class ViewController: NSViewController {
             print("default browser was successfully opened")
         }
     }
-    
+
+    @IBAction func openTestURL(_ sender: Any) {
+        let url = URL(string: "https://shamur.ai/bin/prettyJSON/example.json")!
+        if NSWorkspace.shared.open(url) {
+            print("default browser was successfully opened")
+        }
+    }
+
     @IBAction func openSafariExtensionPreferences(_ sender: AnyObject?) {
         SFSafariApplication.showPreferencesForExtension(withIdentifier: "ai.shamur.bin.PrettyJSON.SafariExtension") { error in
             if let _ = error {
