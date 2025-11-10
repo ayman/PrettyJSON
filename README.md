@@ -18,4 +18,8 @@ While there were a few JSON Pretty Print extensions in the store already, I deci
 
 Also, community contributions are welcome. File an issue to discuss and send a pull request. 
 
-Right now a few things are needed (see the issues).
+Right now a few things are needed (see the [issues](https://github.com/ayman/PrettyJSON/issues)).
+
+## Thanks
+
+Many thanks to everyone who submitted an issue or a pull request! Also thanks to [Mac Geek Gab](https://www.youtube.com/watch?v=-bXt6TWlqqY&t=4352s) for the shout out!
